@@ -1,0 +1,43 @@
+<lead_longterm>
+  <fname>John</fname>
+  <lnme>Doe</lnme>
+  <addr>123 Fake Street</addr>
+  <city>Simulacrum</city>
+  <state>CA</state>
+  <zip>90210</zip>
+  <email>simulation+simulacra\@gmail.com</email>
+  <phone>310</phone>
+  
+  <applicant>
+    <height>
+      <inches>5</inches>
+      <feet>11</feet>
+    </height>
+    <dob>1945-08-25</dob>
+    <gender>M</gender>
+    <weight>195</weight>
+    <relation>Primary</relation> <!-- #Always Primary -->
+    <smoker>0</smoker>
+  </applicant>
+  
+  <married>0</married>
+  <occupation>Retired</occupation>
+  <assets>1000000</assets>
+  <daily_benefit>100</daily_benefit>
+  <elimination_period>30</elimination_period>
+  <coverage>250000</coverage>
+  <benefit_period>5</benefit_period>
+  <living_with>Family</living_with>
+  <insured>1</insured>
+  <insco>State Farm</insco>
+  
+  <!-- # optional default 0 beyond this point, all bools -->
+  <retirement_community>0</retirement_community>
+  <special_driving_needs>0</special_driving_needs>
+  <handicap>0</handicap>
+  <special_additional_help>0</special_additional_help>
+  <unperformed_surgery>0</unperformed_surgery>
+  
+  <!-- #optional, 0-40 -->
+  <hours_working>0</hours_working>
+</lead_longterm>
