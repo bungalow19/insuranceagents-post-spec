@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://api.insuranceagents.com/lead_trading/"
+  xmlns:tns="http://api.insuranceagents.com/lead_trading/" 
+  xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="http://api.insuranceagents.com/lead_trading/company_element.xsd"/>
+</schema>
