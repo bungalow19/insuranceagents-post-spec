@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://ping.insuranceagents.com/ping" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ping.insuranceagents.com/ping">
+  <complexType name="distribution_type">
+  <choice maxOccurs="unbounded">
+    <element name="company_directive" type="tns:company_directive_type"></element>
+    <element name="agent_directive"
+      type="tns:agent_directive_type">
+    </element>
+  </choice>
+</complexType>
+
+<complexType name="company_directive_type">
+  <complexContent>
+    <extension base="tns:directive_type">
+      <all>
+        <element name="company_id" type="tns:company_id_type"></element>
+      </all>
+    </extension>
+  </complexContent>
+</complexType>
+
+<simpleType name="company_id_type">
+  <restriction base="integer">
+    <enumeration value="2"><annotation><documentation>Allstate</documentation></annotation></enumeration>
+    <enumeration value="8"><annotation><documentation>State Farm</documentation></annotation></enumeration>
+    <enumeration value="9"><annotation><documentation>Liberty Mutual</documentation></annotation></enumeration>
+    <enumeration value="10"><annotation><documentation>Farmers</documentation></annotation></enumeration>
+    <enumeration value="11"><annotation><documentation>Farm Bureau</documentation></annotation></enumeration>
+    <enumeration value="12"><annotation><documentation>AFLAC</documentation></annotation></enumeration>
+    <enumeration value="13"><annotation><documentation>American Financial</documentation></annotation></enumeration>
+    <enumeration value="14"><annotation><documentation>Cigna</documentation></annotation></enumeration>
+    <enumeration value="15"><annotation><documentation>Chubb</documentation></annotation></enumeration>
+    <enumeration value="16"><annotation><documentation>Assurant</documentation></annotation></enumeration>
+    <enumeration value="17"><annotation><documentation>GEICO</documentation></annotation></enumeration>
+    <enumeration value="18"><annotation><documentation>Hartford</documentation></annotation></enumeration>
+    <enumeration value="19"><annotation><documentation>Nationwide</documentation></annotation></enumeration>
+    <enumeration value="20"><annotation><documentation>Safeco</documentation></annotation></enumeration>
+    <enumeration value="21"><annotation><documentation>New York Life</documentation></annotation></enumeration>
+    <enumeration value="22"><annotation><documentation>Mercury</documentation></annotation></enumeration>
+    <enumeration value="25"><annotation><documentation>AAA</documentation></annotation></enumeration>
+    <enumeration value="26"><annotation><documentation>AARP</documentation></annotation></enumeration>
+    <enumeration value="27"><annotation><documentation>First Acceptance Insurance</documentation></annotation></enumeration>
+    <enumeration value="28"><annotation><documentation>AETNA</documentation></annotation></enumeration>
+    <enumeration value="29"><annotation><documentation>AIG</documentation></annotation></enumeration>
+    <enumeration value="33"><annotation><documentation>Amica</documentation></annotation></enumeration>
+    <enumeration value="34"><annotation><documentation>Auto Owners</documentation></annotation></enumeration>
+    <enumeration value="35"><annotation><documentation>Blue Cross / Blue Shield</documentation></annotation></enumeration>
+    <enumeration value="36"><annotation><documentation>Citizens</documentation></annotation></enumeration>
+    <enumeration value="37"><annotation><documentation>Erie Insurance</documentation></annotation></enumeration>
+    <enumeration value="38"><annotation><documentation>Foremost</documentation></annotation></enumeration>
+    <enumeration value="39"><annotation><documentation>Golden Rule</documentation></annotation></enumeration>
+    <enumeration value="41"><annotation><documentation>Gerber Life</documentation></annotation></enumeration>
+    <enumeration value="42"><annotation><documentation>Globe</documentation></annotation></enumeration>
+    <enumeration value="43"><annotation><documentation>GMAC</documentation></annotation></enumeration>
+    <enumeration value="44"><annotation><documentation>Grange Mutual Casualty Group</documentation></annotation></enumeration>
+    <enumeration value="46"><annotation><documentation>Guardian</documentation></annotation></enumeration>
+    <enumeration value="47"><annotation><documentation>Guide One</documentation></annotation></enumeration>
+    <enumeration value="48"><annotation><documentation>Humana</documentation></annotation></enumeration>
+    <enumeration value="49"><annotation><documentation>John Hancock</documentation></annotation></enumeration>
+    <enumeration value="50"><annotation><documentation>MetLife</documentation></annotation></enumeration>
+    <enumeration value="51"><annotation><documentation>Ohio Casualty</documentation></annotation></enumeration>
+    <enumeration value="52"><annotation><documentation>Progressive</documentation></annotation></enumeration>
+    <enumeration value="53"><annotation><documentation>StateAuto</documentation></annotation></enumeration>
+    <enumeration value="54"><annotation><documentation>Travelers</documentation></annotation></enumeration>
+    <enumeration value="55"><annotation><documentation>Unitrin Direct</documentation></annotation></enumeration>
+    <enumeration value="56"><annotation><documentation>USAA</documentation></annotation></enumeration>
+    <enumeration value="57"><annotation><documentation>Zurich North America</documentation></annotation></enumeration>
+    <enumeration value="58"><annotation><documentation>Primerica</documentation></annotation></enumeration>
+    <enumeration value="59"><annotation><documentation>UniCare</documentation></annotation></enumeration>
+    <enumeration value="60"><annotation><documentation>Lincoln Benefit Life</documentation></annotation></enumeration>
+    <enumeration value="63"><annotation><documentation>United American</documentation></annotation></enumeration>
+    <enumeration value="64"><annotation><documentation>Prudential</documentation></annotation></enumeration>
+    <enumeration value="65"><annotation><documentation>Mega / Midwest</documentation></annotation></enumeration>
+    <enumeration value="67"><annotation><documentation>Merril Lynch</documentation></annotation></enumeration>
+    <enumeration value="70"><annotation><documentation>USA Benefits Group</documentation></annotation></enumeration>
+    <enumeration value="74"><annotation><documentation>New Wave</documentation></annotation></enumeration>
+    <enumeration value="76"><annotation><documentation>Insphere</documentation></annotation></enumeration>
+    <enumeration value="77"><annotation><documentation>The General</documentation></annotation></enumeration>
+    <enumeration value="1"><annotation><documentation>21st Century</documentation></annotation></enumeration>
+    <enumeration value="78"><annotation><documentation>AIU Insurance</documentation></annotation></enumeration>
+    <enumeration value="79"><annotation><documentation>API</documentation></annotation></enumeration>
+    <enumeration value="80"><annotation><documentation>AXA Group</documentation></annotation></enumeration>
+    <enumeration value="81"><annotation><documentation>Acordia</documentation></annotation></enumeration>
+    <enumeration value="82"><annotation><documentation>Aegis Security</documentation></annotation></enumeration>
+    <enumeration value="83"><annotation><documentation>Affimative</documentation></annotation></enumeration>
+    <enumeration value="84"><annotation><documentation>Alfa Insurance</documentation></annotation></enumeration>
+    <enumeration value="85"><annotation><documentation>All Risk</documentation></annotation></enumeration>
+    <enumeration value="86"><annotation><documentation>Allianz</documentation></annotation></enumeration>
+    <enumeration value="87"><annotation><documentation>Allied</documentation></annotation></enumeration>
+    <enumeration value="88"><annotation><documentation>AmeriPlan</documentation></annotation></enumeration>
+    <enumeration value="89"><annotation><documentation>American Alliance Insurance</documentation></annotation></enumeration>
+    <enumeration value="90"><annotation><documentation>American Automobile Insurance</documentation></annotation></enumeration>
+    <enumeration value="91"><annotation><documentation>American Casualty</documentation></annotation></enumeration>
+    <enumeration value="92"><annotation><documentation>American Deposit Insurance</documentation></annotation></enumeration>
+    <enumeration value="93"><annotation><documentation>American Direct Business Insurance</documentation></annotation></enumeration>
+    <enumeration value="94"><annotation><documentation>American Empire Insurance</documentation></annotation></enumeration>
+    <enumeration value="95"><annotation><documentation>American Equity Investment Life</documentation></annotation></enumeration>
+    <enumeration value="96"><annotation><documentation>American Family</documentation></annotation></enumeration>
+    <enumeration value="97"><annotation><documentation>American Health Underwriters</documentation></annotation></enumeration>
+    <enumeration value="98"><annotation><documentation>American Home Assurance</documentation></annotation></enumeration>
+    <enumeration value="99"><annotation><documentation>American Insurance</documentation></annotation></enumeration>
+    <enumeration value="100"><annotation><documentation>American International Insurance</documentation></annotation></enumeration>
+    <enumeration value="101"><annotation><documentation>American International Pacific</documentation></annotation></enumeration>
+    <enumeration value="102"><annotation><documentation>American International South</documentation></annotation></enumeration>
+    <enumeration value="103"><annotation><documentation>American Manufacturers</documentation></annotation></enumeration>
+    <enumeration value="104"><annotation><documentation>American Mayflower Insurance</documentation></annotation></enumeration>
+    <enumeration value="105"><annotation><documentation>American Medical Security</documentation></annotation></enumeration>
+    <enumeration value="106"><annotation><documentation>American Modern</documentation></annotation></enumeration>
+    <enumeration value="107"><annotation><documentation>American Motorists Insurance</documentation></annotation></enumeration>
+    <enumeration value="108"><annotation><documentation>American National</documentation></annotation></enumeration>
+    <enumeration value="109"><annotation><documentation>American Premier Insurance</documentation></annotation></enumeration>
+    <enumeration value="110"><annotation><documentation>American Protection Insurance</documentation></annotation></enumeration>
+    <enumeration value="111"><annotation><documentation>American Reliable Insurance Company</documentation></annotation></enumeration>
+    <enumeration value="112"><annotation><documentation>American Republic</documentation></annotation></enumeration>
+    <enumeration value="113"><annotation><documentation>American Savers Plan</documentation></annotation></enumeration>
+    <enumeration value="114"><annotation><documentation>American Service Insurance</documentation></annotation></enumeration>
+    <enumeration value="115"><annotation><documentation>American Skyline Insurance</documentation></annotation></enumeration>
+    <enumeration value="116"><annotation><documentation>American Spirit Insurance</documentation></annotation></enumeration>
+    <enumeration value="117"><annotation><documentation>American Standard Insurance</documentation></annotation></enumeration>
+    <enumeration value="118"><annotation><documentation>American Standard Insurance - OH</documentation></annotation></enumeration>
+    <enumeration value="119"><annotation><documentation>American Standard Insurance - WI</documentation></annotation></enumeration>
+    <enumeration value="120"><annotation><documentation>Ameriprise</documentation></annotation></enumeration>
+    <enumeration value="121"><annotation><documentation>Amerisure</documentation></annotation></enumeration>
+    <enumeration value="122"><annotation><documentation>Ameritas Life Insurance</documentation></annotation></enumeration>
+    <enumeration value="123"><annotation><documentation>Answer Financial</documentation></annotation></enumeration>
+    <enumeration value="124"><annotation><documentation>Arbella</documentation></annotation></enumeration>
+    <enumeration value="125"><annotation><documentation>Arizona General</documentation></annotation></enumeration>
+    <enumeration value="126"><annotation><documentation>Armed Forces Insurance</documentation></annotation></enumeration>
+    <enumeration value="127"><annotation><documentation>Associated Indemnity</documentation></annotation></enumeration>
+    <enumeration value="128"><annotation><documentation>Association Field Services</documentation></annotation></enumeration>
+    <enumeration value="129"><annotation><documentation>Atlanta Casualty</documentation></annotation></enumeration>
+    <enumeration value="130"><annotation><documentation>Atlanta Specialty</documentation></annotation></enumeration>
+    <enumeration value="131"><annotation><documentation>Atlantic Indemnity</documentation></annotation></enumeration>
+    <enumeration value="132"><annotation><documentation>Austin Mutual</documentation></annotation></enumeration>
+    <enumeration value="133"><annotation><documentation>Auto Club Insurance Company</documentation></annotation></enumeration>
+    <enumeration value="134"><annotation><documentation>Badger Mutual Insurance Company</documentation></annotation></enumeration>
+    <enumeration value="135"><annotation><documentation>Bankers Life and Casualty Company</documentation></annotation></enumeration>
+    <enumeration value="136"><annotation><documentation>Banner Life</documentation></annotation></enumeration>
+    <enumeration value="137"><annotation><documentation>Best Agency USA</documentation></annotation></enumeration>
+    <enumeration value="138"><annotation><documentation>Brooke Insurance</documentation></annotation></enumeration>
+    <enumeration value="139"><annotation><documentation>CNA</documentation></annotation></enumeration>
+    <enumeration value="140"><annotation><documentation>CSE Insurance Group</documentation></annotation></enumeration>
+    <enumeration value="141"><annotation><documentation>CUNA Mutual</documentation></annotation></enumeration>
+    <enumeration value="142"><annotation><documentation>Cal Farm Insurance</documentation></annotation></enumeration>
+    <enumeration value="143"><annotation><documentation>California Casualty</documentation></annotation></enumeration>
+    <enumeration value="144"><annotation><documentation>California State Automobile Association</documentation></annotation></enumeration>
+    <enumeration value="145"><annotation><documentation>Church Mutual</documentation></annotation></enumeration>
+    <enumeration value="146"><annotation><documentation>Clarendon American Insurance</documentation></annotation></enumeration>
+    <enumeration value="147"><annotation><documentation>Clarendon National Insurance</documentation></annotation></enumeration>
+    <enumeration value="148"><annotation><documentation>Cloverleaf</documentation></annotation></enumeration>
+    <enumeration value="149"><annotation><documentation>Colonial Insurance</documentation></annotation></enumeration>
+    <enumeration value="150"><annotation><documentation>Combined</documentation></annotation></enumeration>
+    <enumeration value="151"><annotation><documentation>Commonwealth Risk</documentation></annotation></enumeration>
+    <enumeration value="152"><annotation><documentation>Comparison Market</documentation></annotation></enumeration>
+    <enumeration value="153"><annotation><documentation>Continental Casualty</documentation></annotation></enumeration>
+    <enumeration value="154"><annotation><documentation>Continental Divide Insurance</documentation></annotation></enumeration>
+    <enumeration value="155"><annotation><documentation>Continental General</documentation></annotation></enumeration>
+    <enumeration value="156"><annotation><documentation>Continental Insurance</documentation></annotation></enumeration>
+    <enumeration value="157"><annotation><documentation>Cotton States</documentation></annotation></enumeration>
+    <enumeration value="158"><annotation><documentation>Country Financial</documentation></annotation></enumeration>
+    <enumeration value="159"><annotation><documentation>Country Insurance</documentation></annotation></enumeration>
+    <enumeration value="160"><annotation><documentation>Countrywide Insurance</documentation></annotation></enumeration>
+    <enumeration value="161"><annotation><documentation>Dairyland County Mutual Company of TX</documentation></annotation></enumeration>
+    <enumeration value="162"><annotation><documentation>Dairyland Insurance</documentation></annotation></enumeration>
+    <enumeration value="163"><annotation><documentation>Deerbrook Insurance</documentation></annotation></enumeration>
+    <enumeration value="164"><annotation><documentation>EMC</documentation></annotation></enumeration>
+    <enumeration value="165"><annotation><documentation>Electric Insurance</documentation></annotation></enumeration>
+    <enumeration value="166"><annotation><documentation>Equitable Life</documentation></annotation></enumeration>
+    <enumeration value="167"><annotation><documentation>Esurance</documentation></annotation></enumeration>
+    <enumeration value="168"><annotation><documentation>Explorer</documentation></annotation></enumeration>
+    <enumeration value="169"><annotation><documentation>Farm Bureau/Farm Family/Rural</documentation></annotation></enumeration>
+    <enumeration value="170"><annotation><documentation>Farm Family Life</documentation></annotation></enumeration>
+    <enumeration value="171"><annotation><documentation>Farmers Insurance Exchange</documentation></annotation></enumeration>
+    <enumeration value="172"><annotation><documentation>Farmers TX County Mutual</documentation></annotation></enumeration>
+    <enumeration value="173"><annotation><documentation>Farmers Union</documentation></annotation></enumeration>
+    <enumeration value="174"><annotation><documentation>Federated</documentation></annotation></enumeration>
+    <enumeration value="175"><annotation><documentation>Fidelity Insurance Company</documentation></annotation></enumeration>
+    <enumeration value="176"><annotation><documentation>FinanceBox.com</documentation></annotation></enumeration>
+    <enumeration value="177"><annotation><documentation>Financial Indemnity</documentation></annotation></enumeration>
+    <enumeration value="178"><annotation><documentation>Fire and Casualty Insurance Co of CT</documentation></annotation></enumeration>
+    <enumeration value="179"><annotation><documentation>Firemans Fund</documentation></annotation></enumeration>
+    <enumeration value="180"><annotation><documentation>Foresters</documentation></annotation></enumeration>
+    <enumeration value="181"><annotation><documentation>Fortis</documentation></annotation></enumeration>
+    <enumeration value="182"><annotation><documentation>Golden State Mutual</documentation></annotation></enumeration>
+    <enumeration value="183"><annotation><documentation>Government Employees Insurance</documentation></annotation></enumeration>
+    <enumeration value="184"><annotation><documentation>Great American</documentation></annotation></enumeration>
+    <enumeration value="185"><annotation><documentation>Great West</documentation></annotation></enumeration>
+    <enumeration value="186"><annotation><documentation>Guaranty National Insurance</documentation></annotation></enumeration>
+    <enumeration value="187"><annotation><documentation>Hanover Lloyds Insurance Co</documentation></annotation></enumeration>
+    <enumeration value="188"><annotation><documentation>Hawkeye Security</documentation></annotation></enumeration>
+    <enumeration value="189"><annotation><documentation>Health Benefits Direct</documentation></annotation></enumeration>
+    <enumeration value="190"><annotation><documentation>Health Choice One</documentation></annotation></enumeration>
+    <enumeration value="191"><annotation><documentation>Health Plus of America</documentation></annotation></enumeration>
+    <enumeration value="192"><annotation><documentation>HealthNet</documentation></annotation></enumeration>
+    <enumeration value="193"><annotation><documentation>HealthShare America</documentation></annotation></enumeration>
+    <enumeration value="194"><annotation><documentation>Horace Mann</documentation></annotation></enumeration>
+    <enumeration value="195"><annotation><documentation>IDS</documentation></annotation></enumeration>
+    <enumeration value="196"><annotation><documentation>IFA Auto Insurance</documentation></annotation></enumeration>
+    <enumeration value="197"><annotation><documentation>IGF Insurance</documentation></annotation></enumeration>
+    <enumeration value="198"><annotation><documentation>Infinity Insurance</documentation></annotation></enumeration>
+    <enumeration value="199"><annotation><documentation>Infinity National Insurance</documentation></annotation></enumeration>
+    <enumeration value="200"><annotation><documentation>Infinity Property and Casualty Insurance</documentation></annotation></enumeration>
+    <enumeration value="201"><annotation><documentation>Infinity Select Insurance</documentation></annotation></enumeration>
+    <enumeration value="202"><annotation><documentation>Insurance Insight</documentation></annotation></enumeration>
+    <enumeration value="203"><annotation><documentation>Insurance.com</documentation></annotation></enumeration>
+    <enumeration value="204"><annotation><documentation>Integon</documentation></annotation></enumeration>
+    <enumeration value="205"><annotation><documentation>Kaiser Permanente</documentation></annotation></enumeration>
+    <enumeration value="206"><annotation><documentation>Kemper Lloyds Insurance</documentation></annotation></enumeration>
+    <enumeration value="207"><annotation><documentation>Landmark American Insurance</documentation></annotation></enumeration>
+    <enumeration value="208"><annotation><documentation>Leader National Insurance</documentation></annotation></enumeration>
+    <enumeration value="209"><annotation><documentation>Leader Preferred Insurance</documentation></annotation></enumeration>
+    <enumeration value="210"><annotation><documentation>Leader Specialty Insurance</documentation></annotation></enumeration>
+    <enumeration value="211"><annotation><documentation>Liberty Insurance Corp</documentation></annotation></enumeration>
+    <enumeration value="212"><annotation><documentation>Liberty National</documentation></annotation></enumeration>
+    <enumeration value="213"><annotation><documentation>Liberty Northwest Insurance</documentation></annotation></enumeration>
+    <enumeration value="214"><annotation><documentation>Lumbermens Mutual</documentation></annotation></enumeration>
+    <enumeration value="215"><annotation><documentation>Markel American</documentation></annotation></enumeration>
+    <enumeration value="216"><annotation><documentation>Maryland Casualty</documentation></annotation></enumeration>
+    <enumeration value="217"><annotation><documentation>Mass Mutual</documentation></annotation></enumeration>
+    <enumeration value="218"><annotation><documentation>Merastar</documentation></annotation></enumeration>
+    <enumeration value="219"><annotation><documentation>Mid Century Insurance</documentation></annotation></enumeration>
+    <enumeration value="220"><annotation><documentation>Mid-Continent Casualty</documentation></annotation></enumeration>
+    <enumeration value="221"><annotation><documentation>Mid-West National Life</documentation></annotation></enumeration>
+    <enumeration value="222"><annotation><documentation>Middlesex Insurance</documentation></annotation></enumeration>
+    <enumeration value="223"><annotation><documentation>Midland National Life</documentation></annotation></enumeration>
+    <enumeration value="224"><annotation><documentation>Millers Mutual</documentation></annotation></enumeration>
+    <enumeration value="225"><annotation><documentation>Mony Group</documentation></annotation></enumeration>
+    <enumeration value="226"><annotation><documentation>Mountain Laurel</documentation></annotation></enumeration>
+    <enumeration value="227"><annotation><documentation>Mutual Of Omaha</documentation></annotation></enumeration>
+    <enumeration value="228"><annotation><documentation>Mutual of Enumclaw</documentation></annotation></enumeration>
+    <enumeration value="229"><annotation><documentation>Mutual of New York</documentation></annotation></enumeration>
+    <enumeration value="230"><annotation><documentation>National Ben Franklin Insurance</documentation></annotation></enumeration>
+    <enumeration value="231"><annotation><documentation>National Casualty</documentation></annotation></enumeration>
+    <enumeration value="232"><annotation><documentation>National Continental Insurance</documentation></annotation></enumeration>
+    <enumeration value="233"><annotation><documentation>National Farmers Union</documentation></annotation></enumeration>
+    <enumeration value="234"><annotation><documentation>National Fire Insurance Co of Hartford</documentation></annotation></enumeration>
+    <enumeration value="235"><annotation><documentation>National Health Insurance</documentation></annotation></enumeration>
+    <enumeration value="236"><annotation><documentation>National Indemnity</documentation></annotation></enumeration>
+    <enumeration value="237"><annotation><documentation>National Merit Insurance</documentation></annotation></enumeration>
+    <enumeration value="238"><annotation><documentation>National Union Fire Insurance of LA</documentation></annotation></enumeration>
+    <enumeration value="239"><annotation><documentation>National Union Fire Insurance of PA</documentation></annotation></enumeration>
+    <enumeration value="240"><annotation><documentation>New England Financial</documentation></annotation></enumeration>
+    <enumeration value="241"><annotation><documentation>North American</documentation></annotation></enumeration>
+    <enumeration value="242"><annotation><documentation>North Pacific</documentation></annotation></enumeration>
+    <enumeration value="243"><annotation><documentation>North Pointe</documentation></annotation></enumeration>
+    <enumeration value="244"><annotation><documentation>Northern Capital</documentation></annotation></enumeration>
+    <enumeration value="245"><annotation><documentation>Northland</documentation></annotation></enumeration>
+    <enumeration value="246"><annotation><documentation>Northwestern Mutual Life</documentation></annotation></enumeration>
+    <enumeration value="247"><annotation><documentation>Northwestern Pacific Indemnity</documentation></annotation></enumeration>
+    <enumeration value="248"><annotation><documentation>Omni Indemnity</documentation></annotation></enumeration>
+    <enumeration value="249"><annotation><documentation>Omni Insurance</documentation></annotation></enumeration>
+    <enumeration value="250"><annotation><documentation>Oregon Mutual</documentation></annotation></enumeration>
+    <enumeration value="251"><annotation><documentation>Orion Insurance</documentation></annotation></enumeration>
+    <enumeration value="252"><annotation><documentation>PEMCO</documentation></annotation></enumeration>
+    <enumeration value="253"><annotation><documentation>Pacific Indemnity</documentation></annotation></enumeration>
+    <enumeration value="254"><annotation><documentation>Pacific Insurance</documentation></annotation></enumeration>
+    <enumeration value="255"><annotation><documentation>Pafco General Insurance</documentation></annotation></enumeration>
+    <enumeration value="256"><annotation><documentation>Patriot General Insurance</documentation></annotation></enumeration>
+    <enumeration value="257"><annotation><documentation>Peak Property and Casualty Insurance</documentation></annotation></enumeration>
+    <enumeration value="258"><annotation><documentation>Penn Mutual</documentation></annotation></enumeration>
+    <enumeration value="259"><annotation><documentation>Pennsylvania National</documentation></annotation></enumeration>
+    <enumeration value="260"><annotation><documentation>Phoenix</documentation></annotation></enumeration>
+    <enumeration value="261"><annotation><documentation>Physicians</documentation></annotation></enumeration>
+    <enumeration value="262"><annotation><documentation>Pioneer Life</documentation></annotation></enumeration>
+    <enumeration value="263"><annotation><documentation>Pioneer Mutual</documentation></annotation></enumeration>
+    <enumeration value="264"><annotation><documentation>Premier</documentation></annotation></enumeration>
+    <enumeration value="265"><annotation><documentation>Principal Financial</documentation></annotation></enumeration>
+    <enumeration value="266"><annotation><documentation>Protective Life</documentation></annotation></enumeration>
+    <enumeration value="267"><annotation><documentation>Quality</documentation></annotation></enumeration>
+    <enumeration value="268"><annotation><documentation>RBC Liberty Insurance</documentation></annotation></enumeration>
+    <enumeration value="269"><annotation><documentation>Reliance Insurance</documentation></annotation></enumeration>
+    <enumeration value="270"><annotation><documentation>Reliance National Indemnity</documentation></annotation></enumeration>
+    <enumeration value="271"><annotation><documentation>Reliance National Insurance</documentation></annotation></enumeration>
+    <enumeration value="272"><annotation><documentation>Reliastar Life</documentation></annotation></enumeration>
+    <enumeration value="273"><annotation><documentation>Republic Indemnity</documentation></annotation></enumeration>
+    <enumeration value="274"><annotation><documentation>Response</documentation></annotation></enumeration>
+    <enumeration value="275"><annotation><documentation>RiverSource Life</documentation></annotation></enumeration>
+    <enumeration value="276"><annotation><documentation>Rockford Mutual</documentation></annotation></enumeration>
+    <enumeration value="277"><annotation><documentation>Safeway Insurance</documentation></annotation></enumeration>
+    <enumeration value="278"><annotation><documentation>Safeway Insurance Co of AL</documentation></annotation></enumeration>
+    <enumeration value="279"><annotation><documentation>Safeway Insurance Co of GA</documentation></annotation></enumeration>
+    <enumeration value="280"><annotation><documentation>Safeway Insurance Co of LA</documentation></annotation></enumeration>
+    <enumeration value="281"><annotation><documentation>Savings Bank Life Insurance</documentation></annotation></enumeration>
+    <enumeration value="282"><annotation><documentation>Secura</documentation></annotation></enumeration>
+    <enumeration value="283"><annotation><documentation>Security Insurance</documentation></annotation></enumeration>
+    <enumeration value="284"><annotation><documentation>Security National Insurance Co of FL</documentation></annotation></enumeration>
+    <enumeration value="285"><annotation><documentation>Sentinel Insurance</documentation></annotation></enumeration>
+    <enumeration value="286"><annotation><documentation>Sentry</documentation></annotation></enumeration>
+    <enumeration value="287"><annotation><documentation>Sentry Insurance A Mutual Company</documentation></annotation></enumeration>
+    <enumeration value="288"><annotation><documentation>Sentry Insurance Group</documentation></annotation></enumeration>
+    <enumeration value="289"><annotation><documentation>Shelter</documentation></annotation></enumeration>
+    <enumeration value="290"><annotation><documentation>St. Paul</documentation></annotation></enumeration>
+    <enumeration value="291"><annotation><documentation>St. Paul Fire and Marine</documentation></annotation></enumeration>
+    <enumeration value="292"><annotation><documentation>St. Paul Insurance</documentation></annotation></enumeration>
+    <enumeration value="293"><annotation><documentation>Standard Fire Insurance Company</documentation></annotation></enumeration>
+    <enumeration value="294"><annotation><documentation>State Farm County</documentation></annotation></enumeration>
+    <enumeration value="295"><annotation><documentation>State Farm Fire and Casualty</documentation></annotation></enumeration>
+    <enumeration value="296"><annotation><documentation>State Farm Indemnity</documentation></annotation></enumeration>
+    <enumeration value="297"><annotation><documentation>State Farm Insurance Co</documentation></annotation></enumeration>
+    <enumeration value="298"><annotation><documentation>State Farm Lloyds TX</documentation></annotation></enumeration>
+    <enumeration value="299"><annotation><documentation>State Farm Mutual Auto</documentation></annotation></enumeration>
+    <enumeration value="300"><annotation><documentation>State Fund</documentation></annotation></enumeration>
+    <enumeration value="301"><annotation><documentation>State National Insurance</documentation></annotation></enumeration>
+    <enumeration value="302"><annotation><documentation>State and County Mutual Fire Insurance</documentation></annotation></enumeration>
+    <enumeration value="303"><annotation><documentation>Superior American Insurance</documentation></annotation></enumeration>
+    <enumeration value="304"><annotation><documentation>Superior Guaranty Insurance</documentation></annotation></enumeration>
+    <enumeration value="305"><annotation><documentation>Superior Insurance</documentation></annotation></enumeration>
+    <enumeration value="306"><annotation><documentation>Sure Health Plans</documentation></annotation></enumeration>
+    <enumeration value="307"><annotation><documentation>Sutter</documentation></annotation></enumeration>
+    <enumeration value="308"><annotation><documentation>TICO Insurance</documentation></annotation></enumeration>
+    <enumeration value="309"><annotation><documentation>TIG Countrywide Insurance</documentation></annotation></enumeration>
+    <enumeration value="310"><annotation><documentation>The Ahbe Group</documentation></annotation></enumeration>
+    <enumeration value="311"><annotation><documentation>Titan</documentation></annotation></enumeration>
+    <enumeration value="312"><annotation><documentation>Tower</documentation></annotation></enumeration>
+    <enumeration value="313"><annotation><documentation>TransAmerica</documentation></annotation></enumeration>
+    <enumeration value="314"><annotation><documentation>Tri-State Consumer Insurance</documentation></annotation></enumeration>
+    <enumeration value="315"><annotation><documentation>Twin City Fire Insurance</documentation></annotation></enumeration>
+    <enumeration value="316"><annotation><documentation>US Financial</documentation></annotation></enumeration>
+    <enumeration value="317"><annotation><documentation>USF and G</documentation></annotation></enumeration>
+    <enumeration value="318"><annotation><documentation>Uniguard</documentation></annotation></enumeration>
+    <enumeration value="319"><annotation><documentation>Union</documentation></annotation></enumeration>
+    <enumeration value="320"><annotation><documentation>United American/Farm and Ranch</documentation></annotation></enumeration>
+    <enumeration value="321"><annotation><documentation>United Financial</documentation></annotation></enumeration>
+    <enumeration value="322"><annotation><documentation>United Fire & Casual</documentation></annotation></enumeration>
+    <enumeration value="323"><annotation><documentation>United Health Care</documentation></annotation></enumeration>
+    <enumeration value="324"><annotation><documentation>United Pacific Insurance</documentation></annotation></enumeration>
+    <enumeration value="325"><annotation><documentation>United Security</documentation></annotation></enumeration>
+    <enumeration value="326"><annotation><documentation>United Services Automobile Association</documentation></annotation></enumeration>
+    <enumeration value="327"><annotation><documentation>Universal Underwriters Insurance</documentation></annotation></enumeration>
+    <enumeration value="328"><annotation><documentation>Utica</documentation></annotation></enumeration>
+    <enumeration value="329"><annotation><documentation>Vigilant</documentation></annotation></enumeration>
+    <enumeration value="330"><annotation><documentation>Viking County Mutual Insurance</documentation></annotation></enumeration>
+    <enumeration value="331"><annotation><documentation>Viking Insurance</documentation></annotation></enumeration>
+    <enumeration value="332"><annotation><documentation>Viking Insurance Company of WI</documentation></annotation></enumeration>
+    <enumeration value="333"><annotation><documentation>Wawaunesa</documentation></annotation></enumeration>
+    <enumeration value="334"><annotation><documentation>Wellington</documentation></annotation></enumeration>
+    <enumeration value="335"><annotation><documentation>Wellpoint</documentation></annotation></enumeration>
+    <enumeration value="336"><annotation><documentation>West American</documentation></annotation></enumeration>
+    <enumeration value="337"><annotation><documentation>West Bend Mutual</documentation></annotation></enumeration>
+    <enumeration value="338"><annotation><documentation>Western Mutual</documentation></annotation></enumeration>
+    <enumeration value="339"><annotation><documentation>Western National</documentation></annotation></enumeration>
+    <enumeration value="340"><annotation><documentation>Western and Southern Life</documentation></annotation></enumeration>
+    <enumeration value="341"><annotation><documentation>Westfield Insurance</documentation></annotation></enumeration>
+    <enumeration value="342"><annotation><documentation>William Penn</documentation></annotation></enumeration>
+    <enumeration value="343"><annotation><documentation>Windsor Insurance</documentation></annotation></enumeration>
+    <enumeration value="344"><annotation><documentation>Wisconsin Mutual</documentation></annotation></enumeration>
+    <enumeration value="345"><annotation><documentation>Woodlands Financial Group</documentation></annotation></enumeration>
+    <enumeration value="346"><annotation><documentation>Workmans Auto</documentation></annotation></enumeration>
+    <enumeration value="347"><annotation><documentation>Worldwide</documentation></annotation></enumeration>
+    <enumeration value="348"><annotation><documentation>Yosemite</documentation></annotation></enumeration>
+    <enumeration value="349"><annotation><documentation>eFinancial</documentation></annotation></enumeration>
+    <enumeration value="350"><annotation><documentation>eHealth Insurance Services</documentation></annotation></enumeration>
+
+  </restriction>
+</simpleType>
+
+<complexType name="agent_directive_type">
+  <complexContent>
+    <extension base="tns:directive_type">
+      <all>
+        <element name="agent_fname" minOccurs="1" maxOccurs="1">
+          <annotation>
+            <documentation>First Character of the Agent's First Name</documentation>
+          </annotation>
+          <simpleType>
+            <restriction base="string">
+              <pattern value="^[A-Za-z]{1}$"></pattern>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="agent_lname" minOccurs="1" maxOccurs="1">
+          <annotation>
+            <documentation>First Three Characters of the Agent's Last Name</documentation>
+          </annotation>
+          <simpleType>
+            <restriction base="string">
+              <pattern value="^[A-Za-z]{3}$"></pattern>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="agent_license" minOccurs="1" maxOccurs="1">
+          <annotation>
+            <documentation>Agent's license number, no spaces</documentation>
+          </annotation>
+          <simpleType>
+            <restriction base="string">
+              <pattern value="^[^ ]+$"></pattern>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="agent_phone" minOccurs="1" maxOccurs="1">
+          <annotation>
+            <documentation>Last 4 Digits of the Agent's Phone Number</documentation>
+          </annotation>
+          <simpleType>
+            <restriction base="string">
+              <pattern value="^[0-9]{4}$"></pattern>
+            </restriction>
+          </simpleType>
+        </element>
+      </all>
+    </extension>
+  </complexContent>
+</complexType>
+
+<complexType name="directive_type">
+  <attribute name="type">
+    <simpleType>
+      <restriction base="string">
+        <enumeration value="include"></enumeration>
+        <enumeration value="exclude"></enumeration>
+      </restriction>
+    </simpleType>
+  </attribute>
+</complexType>
+  
+<complexType name="lead_base">
+  <all>
+    <element name="addr" type="string"></element>
+    <element name="city" type="string"></element>
+    <element name="state" type="string"></element>
+    <element name="zip">
+      <simpleType>
+        <restriction base="integer">
+          <pattern value="\d{5}"></pattern>
+        </restriction>
+      </simpleType>
+    </element>
+    <element name="dui" type="boolean"></element>
+    <element name="email">
+      <simpleType>
+        <restriction base="string">
+          <pattern
+            value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}">
+          </pattern>
+        </restriction>
+      </simpleType>
+    </element>
+    <element name="fname" type="string"></element>
+    <element name="lname" type="string"></element>
+    <element name="occupation">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="Advertising / Public Relations" />
+          <enumeration value="Arts / Entertainment / Publishing" />
+          <enumeration value="Banking / Mortgage" />
+          <enumeration value="Clerical" />
+          <enumeration value="Clergy / Religious" />
+          <enumeration value="Construction / Facilities" />
+          <enumeration value="CPA / Auditor" />
+          <enumeration value="Customer Service / Teller" />
+          <enumeration value="Disabled" />
+          <enumeration value="Doctor / Dentist" />
+          <enumeration value="Education / Training" />
+          <enumeration value="Engineering / Architecture" />
+          <enumeration value="Government" />
+          <enumeration value="Health Care" />
+          <enumeration value="Homemaker" />
+          <enumeration value="Hospitality / Travel" />
+          <enumeration value="Human Resources" />
+          <enumeration value="Insurance" />
+          <enumeration value="Internet / News Media" />
+          <enumeration value="Law Enforcement / Security" />
+          <enumeration value="Legal" />
+          <enumeration value="Management Consulting" />
+          <enumeration value="Manufacturing / Operations" />
+          <enumeration value="Marketing" />
+          <enumeration value="Military / Defense" />
+          <enumeration value="Non-Profit / Volunteer" />
+          <enumeration value="Other" />
+          <enumeration value="Pharmaceutical / Biotech" />
+          <enumeration value="Real Estate" />
+          <enumeration value="Restaurant / Food Service" />
+          <enumeration value="Retail" />
+          <enumeration value="Retired" />
+          <enumeration value="Sales" />
+          <enumeration value="Self Employed" />
+          <enumeration value="Skilled Worker" />
+          <enumeration value="Student" />
+          <enumeration value="Technology" />
+          <enumeration value="Telecommunications" />
+          <enumeration value="Transportation / Logistics" />
+          <enumeration value="Unemployed" />
+        </restriction>
+      </simpleType>
+    </element>
+    <element name="phone" type="tns:phoneType"></element>
+    <element name="phone2" type="tns:phoneType" minOccurs="0"></element>
+    <element name="insured" type="boolean"></element>
+    <element name="insco" type="string" minOccurs="0"></element>
+    <element name="policy_expire" type="date" minOccurs="0"></element>
+    <element name="how_long_ins" minOccurs="0">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="Less than 1 Month" />
+          <enumeration value="Less than 6 Months" />
+          <enumeration value="6 Months - 1 Year" />
+          <enumeration value="1 - 3 Years" />
+          <enumeration value="3 - 5 Years" />
+          <enumeration value="5+ Years" />
+        </restriction>
+      </simpleType>
+    </element>
+    <element name="distribution" type="tns:distribution_type" minOccurs="0" maxOccurs="1"/>
+  </all>
+</complexType>
+
+<simpleType name="phoneType">
+  <restriction base="string">
+    <pattern value="\d{10}"></pattern>
+  </restriction>
+</simpleType>
+</schema>

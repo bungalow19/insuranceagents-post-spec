@@ -4,9 +4,8 @@
     <xs:include schemaLocation="distribution_type.xsd"></xs:include>
     <xs:element name="lead_auto" type="lead_auto_record" />
   <xs:complexType name="lead_auto_record">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="distribution"
-      	type="tns:distribution_type" />
+        <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="distribution" type="tns:distribution_type" />
       <xs:element name="addr" type="addr_type" />
       <xs:element name="city" type="city_type" />
       <xs:element name="coverage" type="coverage_type" />
@@ -27,43 +26,56 @@
       <xs:element name="zip" type="zip_type" />
       <xs:element minOccurs="1" maxOccurs="unbounded" name="car" type="car_record" />
       <xs:element minOccurs="1" maxOccurs="unbounded" name="driver" type="driver_record" />
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
   <xs:complexType name="driver_record">
     <xs:sequence>
-      <xs:element name="dob" type="xs:date" />
-      <xs:element name="driver_fname" type="driver_fname_type" />
-      <xs:element name="driver_lname" type="driver_lname_type" />
-      <xs:element minOccurs="0" name="dui" type="xs:boolean" />
-      <xs:element minOccurs="0" name="dui_date" type="xs:date" />
-      <xs:element name="education" type="education_type" />
-      <xs:element name="gender" type="gender_type" />
-      <xs:element minOccurs="0" name="gpa" type="gpa_type" />
-      <xs:element name="license_age" type="license_age_type" />
-      <xs:element minOccurs="0" name="license_number" type="license_number_type" />
-      <xs:element name="license_state" type="state_type" />
-      <xs:element name="license_status" type="license_status_type" />
-      <xs:element name="marital_status" type="marital_status_type" />
-      <xs:element name="occupation" type="occupation_type" />
-      <xs:element minOccurs="0" name="parents" type="xs:boolean" />
-      <xs:element minOccurs="0" name="relation" type="relation_type" />
-      <xs:element name="sr22" type="xs:boolean" />
-      <xs:element minOccurs="0" name="ssn" type="ssn_type" />
-      <xs:element name="suspension" type="xs:boolean" />
-      <xs:element minOccurs="0" name="suspension_date" type="xs:date" />
-      <xs:element minOccurs="0" name="violation_0_month" type="violation_month" />
-      <xs:element minOccurs="0" name="violation_0_type" type="violation_type" />
-      <xs:element minOccurs="0" name="violation_0_year" type="violation_year" />
-      <xs:element minOccurs="0" name="violation_1_month" type="violation_month" />
-      <xs:element minOccurs="0" name="violation_1_type" type="violation_type" />
-      <xs:element minOccurs="0" name="violation_1_year" type="violation_year" />
-      <xs:element minOccurs="0" name="violation_2_month" type="violation_month" />
-      <xs:element minOccurs="0" name="violation_2_type" type="violation_type" />
-      <xs:element minOccurs="0" name="violation_2_year" type="violation_year" />
-      <xs:element minOccurs="0" name="violation_3_month" type="violation_month" />
-      <xs:element minOccurs="0" name="violation_3_type" type="violation_type" />
-      <xs:element minOccurs="0" name="violation_3_year" type="violation_year" />
-      <xs:element name="violations" type="violations_type" />
+    	<xs:element name="dob" type="xs:date" />
+    	<xs:element name="driver_fname" type="driver_fname_type" />
+    	<xs:element name="driver_lname" type="driver_lname_type" />
+    	<xs:element minOccurs="0" name="dui" type="xs:boolean" />
+    	<xs:element minOccurs="0" name="dui_date" type="xs:date" />
+    	<xs:element name="education" type="education_type" />
+    	<xs:element name="gender" type="gender_type" />
+    	<xs:element minOccurs="0" name="gpa" type="gpa_type" />
+    	<xs:element name="license_age" type="license_age_type" />
+    	<xs:element minOccurs="0" name="license_number"
+    		type="license_number_type" />
+    	<xs:element name="license_state" type="state_type" />
+    	<xs:element name="license_status" type="license_status_type" />
+    	<xs:element name="marital_status" type="marital_status_type" />
+    	<xs:element name="occupation" type="occupation_type" />
+    	<xs:element minOccurs="0" name="parents" type="xs:boolean" />
+    	<xs:element minOccurs="0" name="relation" type="relation_type" />
+    	<xs:element name="sr22" type="xs:boolean" />
+    	<xs:element minOccurs="0" name="ssn" type="ssn_type" />
+    	<xs:element name="suspension" type="xs:boolean" />
+    	<xs:element minOccurs="0" name="suspension_date" type="xs:date" />
+    	<xs:element minOccurs="0" name="violation_0_month"
+    		type="violation_month" />
+    	<xs:element minOccurs="0" name="violation_0_type"
+    		type="violation_type" />
+    	<xs:element minOccurs="0" name="violation_0_year"
+    		type="violation_year" />
+    	<xs:element minOccurs="0" name="violation_1_month"
+    		type="violation_month" />
+    	<xs:element minOccurs="0" name="violation_1_type"
+    		type="violation_type" />
+    	<xs:element minOccurs="0" name="violation_1_year"
+    		type="violation_year" />
+    	<xs:element minOccurs="0" name="violation_2_month"
+    		type="violation_month" />
+    	<xs:element minOccurs="0" name="violation_2_type"
+    		type="violation_type" />
+    	<xs:element minOccurs="0" name="violation_2_year"
+    		type="violation_year" />
+    	<xs:element minOccurs="0" name="violation_3_month"
+    		type="violation_month" />
+    	<xs:element minOccurs="0" name="violation_3_type"
+    		type="violation_type" />
+    	<xs:element minOccurs="0" name="violation_3_year"
+    		type="violation_year" />
+    	<xs:element name="violations" type="tns:violations_type"></xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="car_record">
@@ -595,22 +607,6 @@
       <xs:maxLength value="11" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="violation_month">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Jan" />
-      <xs:enumeration value="Feb" />
-      <xs:enumeration value="Mar" />
-      <xs:enumeration value="Apr" />
-      <xs:enumeration value="May" />
-      <xs:enumeration value="Jun" />
-      <xs:enumeration value="Jul" />
-      <xs:enumeration value="Aug" />
-      <xs:enumeration value="Sep" />
-      <xs:enumeration value="Oct" />
-      <xs:enumeration value="Nov" />
-      <xs:enumeration value="Dec" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="violation_type">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Child Seat" />
@@ -637,25 +633,6 @@
       <xs:enumeration value="Reckless Driving (Person Injured)" />
       <xs:enumeration value="Speed Contest/Exhibition" />
       <xs:enumeration value="Speeding Over 100" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="violation_year">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="2010" />
-      <xs:enumeration value="2009" />
-      <xs:enumeration value="2008" />
-      <xs:enumeration value="2007" />
-      <xs:enumeration value="2006" />
-      <xs:enumeration value="2005" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="violations_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="0" />
-      <xs:enumeration value="1" />
-      <xs:enumeration value="2" />
-      <xs:enumeration value="3" />
-      <xs:enumeration value="4" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="addr_type">
@@ -723,4 +700,29 @@
       <xs:enumeration value="$ 100,000" />
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:complexType name="violations_type">
+        <xs:all>
+        	<xs:element name="type" type="tns:violation_type"
+        		minOccurs="1" maxOccurs="1">
+        	</xs:element>
+        	<xs:element name="month" minOccurs="1" maxOccurs="1">
+        		<xs:simpleType>
+        			<xs:restriction base="xs:integer">
+        				<xs:minInclusive value="1"></xs:minInclusive>
+        				<xs:maxInclusive value="12"></xs:maxInclusive>
+        			</xs:restriction>
+        		</xs:simpleType>
+        	</xs:element>
+        	<xs:element name="year" minOccurs="1" maxOccurs="1">
+        		<xs:simpleType>
+        			<xs:restriction base="xs:integer">
+        				<xs:minInclusive value="2005"></xs:minInclusive>
+        				<xs:maxInclusive value="2020"></xs:maxInclusive>
+        			</xs:restriction>
+        		</xs:simpleType>
+        	</xs:element>
+        </xs:all>
+        
+  </xs:complexType>
 </xs:schema>
