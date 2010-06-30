@@ -487,26 +487,26 @@
   </xs:simpleType>
   <xs:simpleType name="garage_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="No Garage" />
-      <xs:enumeration value="Carport" />
-      <xs:enumeration value="Attached - 1 Car" />
-      <xs:enumeration value="Attached - 2 Cars" />
-      <xs:enumeration value="Attached - 3 Cars" />
-      <xs:enumeration value="Not Attached - 1 Car" />
-      <xs:enumeration value="Not Attached - 2 Cars" />
-      <xs:enumeration value="Not Attached - 3 Cars" />
-      <xs:enumeration value="Other" />
+      <enumeration value="No Garage" />
+      <enumeration value="Carport" />
+      <enumeration value="Attached - 1 Car" />
+      <enumeration value="Attached - 2 Cars" />
+      <enumeration value="Attached - 3 Cars" />
+      <enumeration value="Not Attached - 1 Car" />
+      <enumeration value="Not Attached - 2 Cars" />
+      <enumeration value="Not Attached - 3 Cars" />
+      <enumeration value="Other" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="heating_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Electric" />
-      <xs:enumeration value="Natural Gas" />
-      <xs:enumeration value="Propane" />
-      <xs:enumeration value="Boiler" />
-      <xs:enumeration value="Stove" />
-      <xs:enumeration value="Other" />
-      <xs:enumeration value="Not Sure" />
+      <enumeration value="Electric" />
+      <enumeration value="Natural Gas" />
+      <enumeration value="Propane" />
+      <enumeration value="Boiler" />
+      <enumeration value="Stove" />
+      <enumeration value="Other" />
+      <enumeration value="Not Sure" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="how_long_ins_type">
@@ -521,22 +521,22 @@
   </xs:simpleType>
   <xs:simpleType name="liability_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="$50,000" />
-      <xs:enumeration value="$100,000" />
-      <xs:enumeration value="$200,000" />
-      <xs:enumeration value="$300,000" />
-      <xs:enumeration value="$400,000" />
-      <xs:enumeration value="$500,000" />
-      <xs:enumeration value="$1,000,000+" />
-      <xs:enumeration value="Not Sure" />
+      <enumeration value="$50,000" />
+      <enumeration value="$100,000" />
+      <enumeration value="$200,000" />
+      <enumeration value="$300,000" />
+      <enumeration value="$400,000" />
+      <enumeration value="$500,000" />
+      <enumeration value="$1,000,000+" />
+      <enumeration value="Not Sure" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="occupancy_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Primary Residence" />
-      <xs:enumeration value="Seasonal Residence" />
-      <xs:enumeration value="Vacation Property" />
-      <xs:enumeration value="Rental Property" />
+      <enumeration value="Primary Residence" />
+      <enumeration value="Seasonal Residence" />
+      <enumeration value="Vacation Property" />
+      <enumeration value="Rental Property" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="property_addr_type">
@@ -553,53 +553,53 @@
   </xs:simpleType>
   <xs:simpleType name="roofing_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Asphalt Shingle" />
-      <xs:enumeration value="Composition Shingle" />
-      <xs:enumeration value="Wood Shingle" />
-      <xs:enumeration value="Tile Shingle" />
-      <xs:enumeration value="Metal Roof" />
-      <xs:enumeration value="Flat Roof" />
-      <xs:enumeration value="Other" />
+      <enumeration value="Asphalt Shingle" />
+      <enumeration value="Composition Shingle" />
+      <enumeration value="Wood Shingle" />
+      <enumeration value="Tile Shingle" />
+      <enumeration value="Metal Roof" />
+      <enumeration value="Flat Roof" />
+      <enumeration value="Other" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="security_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="No" />
-      <xs:enumeration value="Yes, With Monitoring Company" />
-      <xs:enumeration value="Yes, A Home-only System" />
+      <enumeration value="No" />
+      <enumeration value="Yes, With Monitoring Company" />
+      <enumeration value="Yes, A Home-only System" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="siding_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Brick" />
-      <xs:enumeration value="Vinyl Siding" />
-      <xs:enumeration value="Stucco" />
-      <xs:enumeration value="Veneer" />
-      <xs:enumeration value="Stone" />
-      <xs:enumeration value="Wood" />
-      <xs:enumeration value="Aluminum Siding" />
-      <xs:enumeration value="Cinder Block" />
-      <xs:enumeration value="Other / Not Sure" />
+      <enumeration value="Brick" />
+      <enumeration value="Vinyl Siding" />
+      <enumeration value="Stucco" />
+      <enumeration value="Veneer" />
+      <enumeration value="Stone" />
+      <enumeration value="Wood" />
+      <enumeration value="Aluminum Siding" />
+      <enumeration value="Cinder Block" />
+      <enumeration value="Other / Not Sure" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="squarefeet_type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="100 - 500" />
-      <xs:enumeration value="500 - 1000" />
-      <xs:enumeration value="1000 - 1500" />
-      <xs:enumeration value="1500 - 2000" />
-      <xs:enumeration value="2000 - 2500" />
-      <xs:enumeration value="2500 - 3000" />
-      <xs:enumeration value="3000 - 3500" />
-      <xs:enumeration value="3500 - 4000" />
-      <xs:enumeration value="4000 - 4500" />
-      <xs:enumeration value="4500 - 5000" />
-      <xs:enumeration value="5000 - 5500" />
-      <xs:enumeration value="5500 - 6000" />
-      <xs:enumeration value="6000 - 6500" />
-      <xs:enumeration value="6500 - 7000" />
-      <xs:enumeration value="7000 - 7500" />
-      <xs:enumeration value="7500+" />
+      <enumeration value="100 - 500" />
+      <enumeration value="500 - 1000" />
+      <enumeration value="1000 - 1500" />
+      <enumeration value="1500 - 2000" />
+      <enumeration value="2000 - 2500" />
+      <enumeration value="2500 - 3000" />
+      <enumeration value="3000 - 3500" />
+      <enumeration value="3500 - 4000" />
+      <enumeration value="4000 - 4500" />
+      <enumeration value="4500 - 5000" />
+      <enumeration value="5000 - 5500" />
+      <enumeration value="5500 - 6000" />
+      <enumeration value="6000 - 6500" />
+      <enumeration value="6500 - 7000" />
+      <enumeration value="7000 - 7500" />
+      <enumeration value="7500+" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="stories_type">

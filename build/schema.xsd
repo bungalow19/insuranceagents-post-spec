@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="http://ping.insuranceagents.com/ping" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ping.insuranceagents.com/ping">
-  <complexType name="distribution_type">
-  <choice maxOccurs="unbounded">
-    <element name="company_directive" type="tns:company_directive_type"></element>
-    <element name="agent_directive"
-      type="tns:agent_directive_type">
-    </element>
-  </choice>
-</complexType>
-
 <complexType name="company_directive_type">
   <complexContent>
     <extension base="tns:directive_type">
@@ -415,94 +406,117 @@
 </complexType>
   
 <complexType name="lead_base">
-  <all>
-    <element name="addr" type="string"></element>
-    <element name="city" type="string"></element>
-    <element name="state" type="string"></element>
-    <element name="zip">
-      <simpleType>
-        <restriction base="integer">
-          <pattern value="\d{5}"></pattern>
-        </restriction>
-      </simpleType>
-    </element>
-    <element name="dui" type="boolean"></element>
-    <element name="email">
-      <simpleType>
-        <restriction base="string">
-          <pattern
-            value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}">
-          </pattern>
-        </restriction>
-      </simpleType>
-    </element>
-    <element name="fname" type="string"></element>
-    <element name="lname" type="string"></element>
-    <element name="occupation">
-      <simpleType>
-        <restriction base="string">
-          <enumeration value="Advertising / Public Relations" />
-          <enumeration value="Arts / Entertainment / Publishing" />
-          <enumeration value="Banking / Mortgage" />
-          <enumeration value="Clerical" />
-          <enumeration value="Clergy / Religious" />
-          <enumeration value="Construction / Facilities" />
-          <enumeration value="CPA / Auditor" />
-          <enumeration value="Customer Service / Teller" />
-          <enumeration value="Disabled" />
-          <enumeration value="Doctor / Dentist" />
-          <enumeration value="Education / Training" />
-          <enumeration value="Engineering / Architecture" />
-          <enumeration value="Government" />
-          <enumeration value="Health Care" />
-          <enumeration value="Homemaker" />
-          <enumeration value="Hospitality / Travel" />
-          <enumeration value="Human Resources" />
-          <enumeration value="Insurance" />
-          <enumeration value="Internet / News Media" />
-          <enumeration value="Law Enforcement / Security" />
-          <enumeration value="Legal" />
-          <enumeration value="Management Consulting" />
-          <enumeration value="Manufacturing / Operations" />
-          <enumeration value="Marketing" />
-          <enumeration value="Military / Defense" />
-          <enumeration value="Non-Profit / Volunteer" />
-          <enumeration value="Other" />
-          <enumeration value="Pharmaceutical / Biotech" />
-          <enumeration value="Real Estate" />
-          <enumeration value="Restaurant / Food Service" />
-          <enumeration value="Retail" />
-          <enumeration value="Retired" />
-          <enumeration value="Sales" />
-          <enumeration value="Self Employed" />
-          <enumeration value="Skilled Worker" />
-          <enumeration value="Student" />
-          <enumeration value="Technology" />
-          <enumeration value="Telecommunications" />
-          <enumeration value="Transportation / Logistics" />
-          <enumeration value="Unemployed" />
-        </restriction>
-      </simpleType>
-    </element>
-    <element name="phone" type="tns:phoneType"></element>
-    <element name="phone2" type="tns:phoneType" minOccurs="0"></element>
-    <element name="insured" type="boolean"></element>
-    <element name="insco" type="string" minOccurs="0"></element>
-    <element name="policy_expire" type="date" minOccurs="0"></element>
-    <element name="how_long_ins" minOccurs="0">
-      <simpleType>
-        <restriction base="string">
-          <enumeration value="Less than 1 Month" />
-          <enumeration value="Less than 6 Months" />
-          <enumeration value="6 Months - 1 Year" />
-          <enumeration value="1 - 3 Years" />
-          <enumeration value="3 - 5 Years" />
-          <enumeration value="5+ Years" />
-        </restriction>
-      </simpleType>
-    </element>
-    <element name="distribution" type="tns:distribution_type" minOccurs="0" maxOccurs="1"/>
-  </all>
+        <sequence>
+        	<element name="distribution" minOccurs="0" maxOccurs="1">
+        	 <complexType>
+        	   <choice maxOccurs="unbounded">
+    <element name="company_directive" type="tns:company_directive_type"/>
+    <element name="agent_directive" type="tns:agent_directive_type"/>
+  </choice>
+        	 </complexType>
+        	</element>
+        	<element name="addr" type="string" minOccurs="1"
+        		maxOccurs="1">
+        	</element>
+        	<element name="city" type="string" minOccurs="1"
+        		maxOccurs="1">
+        	</element>
+            <element name="credit_history" minOccurs="1" maxOccurs="1">
+        		<simpleType>
+        			<restriction base="string">
+        				<enumeration value="Excellent"></enumeration>
+        				<enumeration value="Good"></enumeration>
+        				<enumeration value="Fair"></enumeration>
+        				<enumeration value="Poor"></enumeration>
+        			</restriction>
+        		</simpleType>
+        	</element>
+            <element name="dui" type="boolean" minOccurs="1" maxOccurs="1">
+        	</element>
+            <element name="email" minOccurs="1" maxOccurs="1">
+        		<simpleType>
+        			<restriction base="string">
+        				<pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}">
+        				</pattern>
+        			</restriction>
+        		</simpleType>
+        	</element>
+            <element name="fname" type="string" minOccurs="1" maxOccurs="1">
+        	</element>
+            <element name="how_long_ins" minOccurs="0">
+        		<simpleType>
+        			<restriction base="string">
+        				<enumeration value="Less than 1 Month" />
+        				<enumeration value="Less than 6 Months" />
+        				<enumeration value="6 Months - 1 Year" />
+        				<enumeration value="1 - 3 Years" />
+        				<enumeration value="3 - 5 Years" />
+        				<enumeration value="5+ Years" />
+        			</restriction>
+        		</simpleType>
+        	</element>
+            <element name="insco" type="string" minOccurs="0"></element>
+            <element name="insured" type="boolean" minOccurs="1" maxOccurs="1">
+        	</element>
+            <element name="lname" type="string" minOccurs="1" maxOccurs="1">
+        	</element>
+            <element name="occupation" minOccurs="1" maxOccurs="1">
+        		<simpleType>
+        			<restriction base="string">
+        				<enumeration value="Advertising / Public Relations" />
+        				<enumeration value="Arts / Entertainment / Publishing" />
+        				<enumeration value="Banking / Mortgage" />
+        				<enumeration value="Clerical" />
+        				<enumeration value="Clergy / Religious" />
+        				<enumeration value="Construction / Facilities" />
+        				<enumeration value="CPA / Auditor" />
+        				<enumeration value="Customer Service / Teller" />
+        				<enumeration value="Disabled" />
+        				<enumeration value="Doctor / Dentist" />
+        				<enumeration value="Education / Training" />
+        				<enumeration value="Engineering / Architecture" />
+        				<enumeration value="Government" />
+        				<enumeration value="Health Care" />
+        				<enumeration value="Homemaker" />
+        				<enumeration value="Hospitality / Travel" />
+        				<enumeration value="Human Resources" />
+        				<enumeration value="Insurance" />
+        				<enumeration value="Internet / News Media" />
+        				<enumeration value="Law Enforcement / Security" />
+        				<enumeration value="Legal" />
+        				<enumeration value="Management Consulting" />
+        				<enumeration value="Manufacturing / Operations" />
+        				<enumeration value="Marketing" />
+        				<enumeration value="Military / Defense" />
+        				<enumeration value="Non-Profit / Volunteer" />
+        				<enumeration value="Other" />
+        				<enumeration value="Pharmaceutical / Biotech" />
+        				<enumeration value="Real Estate" />
+        				<enumeration value="Restaurant / Food Service" />
+        				<enumeration value="Retail" />
+        				<enumeration value="Retired" />
+        				<enumeration value="Sales" />
+        				<enumeration value="Self Employed" />
+        				<enumeration value="Skilled Worker" />
+        				<enumeration value="Student" />
+        				<enumeration value="Technology" />
+        				<enumeration value="Telecommunications" />
+        				<enumeration value="Transportation / Logistics" />
+        				<enumeration value="Unemployed" />
+        			</restriction>
+        		</simpleType>
+        	</element>
+        	<element name="phone" type="tns:phoneType" minOccurs="1"
+        		maxOccurs="1">
+        	</element>
+        	<element name="phone2" type="tns:phoneType" minOccurs="0"></element>
+        	<element name="policy_expire" type="date" minOccurs="0"></element>
+            <element name="state" type="string" minOccurs="1" maxOccurs="1">
+        	</element>
+            <element name="zip" minOccurs="1" maxOccurs="1" type="tns:zipSimpleType">
+        	</element>
+        </sequence>
+        
 </complexType>
 
 <simpleType name="phoneType">
@@ -510,4 +524,392 @@
     <pattern value="\d{10}"></pattern>
   </restriction>
 </simpleType>
+
+    <element name="lead_auto" type="string"></element>
+
+    <element name="lead_health" type="string"></element>
+
+    <element name="lead_annuity">
+    	<complexType>
+    		<complexContent>
+    			<extension base="tns:lead_base">
+                    <sequence>
+    					<element name="annuity_type" minOccurs="1" maxOccurs="1">
+    					 <simpleType>
+    					     <restriction base="string">
+      <enumeration value="Fixed" />
+      <enumeration value="Variable" />
+      <enumeration value="Equity Index" />
+      <enumeration value="Not Sure" />
+    </restriction>
+    </simpleType>
+    					</element>
+    					<element name="invest" minOccurs="1" maxOccurs="1">
+    					  <simpleType>
+    					   <restriction base="string">
+    					           <enumeration value="Not Sure" />
+      <enumeration value="$ 25,000 or Less" />
+      <enumeration value="$ 25,000 - $ 50,000" />
+      <enumeration value="$ 50,000 - $ 75,000" />
+      <enumeration value="$ 75,000 - $ 100,000" />
+      <enumeration value="$ 100,000 - $ 150,000" />
+      <enumeration value="$ 150,000 - $ 200,000" />
+      <enumeration value="$ 200,000 - $ 250,000" />
+      <enumeration value="$ 250,000 - $ 300,000" />
+      <enumeration value="$ 300,000 - $ 400,000" />
+      <enumeration value="$ 400,000 - $ 500,000" />
+      <enumeration value="$ 500,000 - $ 600,000" />
+      <enumeration value="$ 600,000 - $ 700,000" />
+      <enumeration value="$ 700,000 - $ 800,000" />
+      <enumeration value="$ 800,000 - $ 900,000" />
+      <enumeration value="$ 900,000 - $ 1,000,000" />
+      <enumeration value="$ 1,000,000 or More" />
+    					   </restriction>
+    					  </simpleType>
+    					</element>
+    					<element name="objective" minOccurs="1" maxOccurs="1">
+    						<simpleType>
+    							<restriction base="string">
+    								<enumeration value="Retirement"></enumeration>
+    								<enumeration value="Income Stream">
+    								</enumeration>
+    								<enumeration value="Stock Market Alternative">
+    								</enumeration>
+    								<enumeration value="CD Alternative">
+    								</enumeration>
+    								<enumeration value="Not Sure"></enumeration>
+    							</restriction>
+    						</simpleType>
+    					</element>
+    					<element name="term" minOccurs="1" maxOccurs="1">
+    						<simpleType>
+    							<restriction base="string">
+    								<enumeration value="10 Years"></enumeration>
+    								<enumeration value="15 Years"></enumeration>
+    								<enumeration value="20 Years"></enumeration>
+    								<enumeration value="30 Years"></enumeration>
+    								<enumeration value="Not Sure"></enumeration>
+    							</restriction>
+    						</simpleType>
+    					</element>
+    					<element name="marital_status" type="tns:marital_status" minOccurs="1" maxOccurs="1">
+    					</element>
+    				</sequence>
+    			</extension>
+    		</complexContent>
+    	</complexType>
+    </element>
+    
+    <element name="lead_home">
+    	<complexType>
+    		<complexContent>
+    			<extension base="tns:lead_residential">
+    				<sequence>
+    					<element name="own_home" type="boolean"></element>
+    				</sequence>
+    			</extension>
+    		</complexContent>
+    	</complexType>
+    </element>
+    
+    <element name="lead_life" type="string"></element>
+
+    <element name="lead_renters" type="tns:lead_residential"></element>
+    
+    <element name="lead_condo" type="tns:lead_residential"></element>
+
+    <simpleType name="marital_status">
+    	<restriction base="string">
+    		<enumeration value="Single"></enumeration>
+    		<enumeration value="Married"></enumeration>
+    		<enumeration value="Separated"></enumeration>
+    		<enumeration value="Divorced"></enumeration>
+    		<enumeration value="Widowed"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="lead_residential">
+    	<complexContent>
+    		<extension base="tns:lead_base">
+    			<sequence>
+    				<element name="bathrooms">
+    					<simpleType>
+    						<restriction base="string">
+    							<enumeration value="1"></enumeration>
+    							<enumeration value="1 1/2"></enumeration>
+    							<enumeration value="2"></enumeration>
+    							<enumeration value="2 1/2"></enumeration>
+    							<enumeration value="3"></enumeration>
+    							<enumeration value="3 1/2"></enumeration>
+    							<enumeration value="4"></enumeration>
+    							<enumeration value="4 1/2"></enumeration>
+    							<enumeration value="5"></enumeration>
+    							<enumeration value="5 1/2"></enumeration>
+    							<enumeration value="6"></enumeration>
+    							<enumeration value="6 1/2"></enumeration>
+    							<enumeration value="7"></enumeration>
+    							<enumeration value="7 1/2"></enumeration>
+    							<enumeration value="8+"></enumeration>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="bedrooms">
+    					<simpleType>
+    						<restriction base="integer">
+    							<maxInclusive value="9"></maxInclusive>
+    							<minInclusive value="1"></minInclusive>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="claims" type="tns:claimsType"></element>
+    				<element name="construction">
+    					<simpleType>
+    						<restriction base="string">
+    							<enumeration value="Wood Frame"></enumeration>
+    							<enumeration value="Metal Frame"></enumeration>
+    							<enumeration value="Masonry"></enumeration>
+    							<enumeration value="Log Home"></enumeration>
+    							<enumeration value="Other"></enumeration>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="coverage_amt" type="decimal"></element>
+    				<element name="deductible">
+    					<simpleType>
+    						<restriction base="string">
+    							<enumeration value="$100"></enumeration>
+    							<enumeration value="$250"></enumeration>
+    							<enumeration value="$500"></enumeration>
+    							<enumeration value="$1,000"></enumeration>
+    							<enumeration value="$2,000"></enumeration>
+    							<enumeration value="$2,500"></enumeration>
+    							<enumeration value="$5,000"></enumeration>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="dwelling">
+    					<simpleType>
+    						<restriction base="string">
+    							<enumeration value="Single Family"></enumeration>
+    							<enumeration value="Duplex"></enumeration>
+    							<enumeration value="Multi Family"></enumeration>
+    							<enumeration value="Townhome"></enumeration>
+    							<enumeration value="Condominium"></enumeration>
+    							<enumeration value="Mobile Home"></enumeration>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="fireplaces">
+    					<simpleType>
+    						<restriction base="string">
+    							<enumeration value="1"></enumeration>
+    							<enumeration value="2"></enumeration>
+    							<enumeration value="3"></enumeration>
+    							<enumeration value="4+"></enumeration>
+    						</restriction>
+    					</simpleType>
+    				</element>
+    				<element name="foundation">
+    				  <simpleType>
+    				    <restriction base="string">
+      <enumeration value="Basement Less Than 50% Finished" />
+      <enumeration value="Basement More Than 50% Finished" />
+      <enumeration value="Crawl Space" />
+      <enumeration value="Open (Cement Non-Solid)" />
+      <enumeration value="Piers, Pilings or Stilts" />
+      <enumeration value="Slab (Cement Solid)" />
+      <enumeration value="Other / Not Sure" />
+                </restriction>
+              </simpleType>
+    				</element>
+    				<element name="garage">
+    				  <simpleType>
+    				  <restriction base="string">
+    				        <enumeration value="No Garage" />
+      <enumeration value="Carport" />
+      <enumeration value="Attached - 1 Car" />
+      <enumeration value="Attached - 2 Cars" />
+      <enumeration value="Attached - 3 Cars" />
+      <enumeration value="Not Attached - 1 Car" />
+      <enumeration value="Not Attached - 2 Cars" />
+      <enumeration value="Not Attached - 3 Cars" />
+      <enumeration value="Other" />
+    				  </restriction></simpleType>
+    				</element>
+    				<element name="heating">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="Electric" />
+      <enumeration value="Natural Gas" />
+      <enumeration value="Propane" />
+      <enumeration value="Boiler" />
+      <enumeration value="Stove" />
+      <enumeration value="Other" />
+      <enumeration value="Not Sure" />
+      </restriction>
+    				</simpleType>
+    				</element>
+    				<element name="liability">
+    				  <simpleType>
+    				<restriction base="string">
+    				      <enumeration value="$50,000" />
+      <enumeration value="$100,000" />
+      <enumeration value="$200,000" />
+      <enumeration value="$300,000" />
+      <enumeration value="$400,000" />
+      <enumeration value="$500,000" />
+      <enumeration value="$1,000,000+" />
+      <enumeration value="Not Sure" />
+      </restriction>
+              </simpleType>
+    				</element>
+    				<element name="occupancy">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="Primary Residence" />
+      <enumeration value="Seasonal Residence" />
+      <enumeration value="Vacation Property" />
+      <enumeration value="Rental Property" />
+      </restriction></simpleType></element>
+    				<element name="property_addr" type="string"></element>
+    				<element name="property_city" type="string"></element>
+    				<element name="property_state" type="string"></element>
+    				<element name="property_zip" type="tns:zipSimpleType"></element>
+    				<element name="roofing">
+    				<simpleType>
+    				<restriction base="string">
+    				<enumeration value="Asphalt Shingle" />
+      <enumeration value="Composition Shingle" />
+      <enumeration value="Wood Shingle" />
+      <enumeration value="Tile Shingle" />
+      <enumeration value="Metal Roof" />
+      <enumeration value="Flat Roof" />
+      <enumeration value="Other" /></restriction></simpleType></element>
+    				<element name="security">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="No" />
+      <enumeration value="Yes, With Monitoring Company" />
+      <enumeration value="Yes, A Home-only System" />
+      </restriction></simpleType></element>
+    				<element name="siding">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="Brick" />
+      <enumeration value="Vinyl Siding" />
+      <enumeration value="Stucco" />
+      <enumeration value="Veneer" />
+      <enumeration value="Stone" />
+      <enumeration value="Wood" />
+      <enumeration value="Aluminum Siding" />
+      <enumeration value="Cinder Block" />
+      <enumeration value="Other / Not Sure" />
+    				</restriction>
+    				</simpleType>
+    				</element>
+    				<element name="squarefeet">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="100 - 500" />
+      <enumeration value="500 - 1000" />
+      <enumeration value="1000 - 1500" />
+      <enumeration value="1500 - 2000" />
+      <enumeration value="2000 - 2500" />
+      <enumeration value="2500 - 3000" />
+      <enumeration value="3000 - 3500" />
+      <enumeration value="3500 - 4000" />
+      <enumeration value="4000 - 4500" />
+      <enumeration value="4500 - 5000" />
+      <enumeration value="5000 - 5500" />
+      <enumeration value="5500 - 6000" />
+      <enumeration value="6000 - 6500" />
+      <enumeration value="6500 - 7000" />
+      <enumeration value="7000 - 7500" />
+      <enumeration value="7500+" />
+    				</restriction></simpleType></element>
+    				<element name="stories">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="1" />
+      <enumeration value="1 1/2" />
+      <enumeration value="2" />
+      <enumeration value="3" />
+      <enumeration value="4+" />
+      <enumeration value="Bi-Level" />
+      <enumeration value="Tri-Level" />
+      </restriction></simpleType></element>
+    				<element name="year_built">
+    				<simpleType>
+    				<restriction base="integer">
+    				<minInclusive value="1900"/>
+    				<maxInclusive value="2020"/>
+    				</restriction></simpleType></element>
+    				<element name="years_prev">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="Less Than 1 Year" />
+      <enumeration value="1 Year" />
+      <enumeration value="2 Years" />
+      <enumeration value="3 Years" />
+      <enumeration value="4 Years" />
+      <enumeration value="5 or More Years" />
+      </restriction></simpleType></element>
+    				<element name="years_resident">
+    				<simpleType>
+    				<restriction base="string">
+    				      <enumeration value="Less Than 1 Year" />
+      <enumeration value="1 Year" />
+      <enumeration value="2 Years" />
+      <enumeration value="3 Years" />
+      <enumeration value="4 Years" />
+      <enumeration value="5 or More Years" />
+      </restriction></simpleType>
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    <simpleType name="zipSimpleType">
+    	<restriction base="string">
+    		<pattern value="\d{5}"></pattern>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="claimsType">
+    	<sequence>
+        
+            <element name="claim">
+            	<complexType>
+            	<all>
+            		<element name="claim_type">
+            			<simpleType>
+            				<restriction base="string">
+            					<enumeration value="Weather"></enumeration>
+            					<enumeration value="Vandalism"></enumeration>
+            					<enumeration value="Fire"></enumeration>
+            					<enumeration value="Water"></enumeration>
+            					<enumeration value="Other"></enumeration>
+            				</restriction>
+            			</simpleType>
+            		</element>
+            		<element name="claim_year">
+            			<simpleType>
+            				<restriction base="int">
+            					<minInclusive value="2003"></minInclusive>
+            					<maxInclusive value="2020"></maxInclusive>
+            				</restriction>
+            			</simpleType>
+            		</element>
+            		<element name="claim_month">
+            			<simpleType>
+            				<restriction base="int">
+            					<minInclusive value="1"></minInclusive>
+            					<maxInclusive value="12"></maxInclusive>
+            				</restriction>
+            			</simpleType>
+            		</element>
+            	</all></complexType>
+            </element>
+    	</sequence>
+    </complexType>
 </schema>
