@@ -71,7 +71,7 @@ Instead of buying exclusive rights to the league, we will return with an XML res
 
     <?xml version="1.0" encoding="utf-8"?>
     <reply xmlns="http://ping.insuranceagents.com/ping">
-      <code>OK</code>
+      <code>1</code>
       <comments></comments>
       <distribution>
         <company_directive>
