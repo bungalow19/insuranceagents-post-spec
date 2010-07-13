@@ -25,9 +25,9 @@ website to look up the error code.  Contact us for errors that are indicative of
 
 or a ping request, you must provide the following parameters:
 
-	key	Password for posting 
-	action	Set to "ping" 
-xml	Actual lead data in XML
+    key	Password for posting 
+    action	Set to "ping" 
+    xml	Actual lead data in XML
 
 While testing your ping, The following fields may be left out or left blank in order to ping:
 fname, lname, addr, city, state, email, phone
@@ -46,10 +46,10 @@ You will receive a response to your ping in the following format:
     </reply>
 
 Response codes (<code>Response code</code>)
-    1	Success 
-	  -2	Failed login verification.  May also be missing affiliate login or missing password
-    -3	Bad XML, either invalid XML formatting or schema violations.  
-	  See <comment>Comments</comment> for details.
+    1   Success 
+    -2  Failed login verification.  May also be missing affiliate login or missing password
+    -3  Bad XML, either invalid XML formatting or schema violations.  
+    See <comment>Comments</comment> for details.
 
 The id parameter (<id>Your provided id (if available)</id>), containing your id for the lead, is an optional field.  If it is provided, it will be echoed in the return offer we make.
 
@@ -65,7 +65,7 @@ Use lower case, the parameters and values we receive via http post are case sens
 Leg Bidding
 -----------
 
-To use leg bidding, use the same procedure as before, but set the 'type' attribute on the +<distribution>+ tag to 'leg\_bid'.
+To use leg bidding, use the same procedure as before, but set the 'type' attribute on the `<distribution>` tag to 'leg\_bid'.
   
 Instead of buying exclusive rights to the league, we will return with an XML response as follows:
 
@@ -95,6 +95,6 @@ Contact us for a testing/production API key.
 Distribution Directives
 -----------------------
 
-The +distribution+ element of the schema directs our sales. Normally when you are using the Price Presentation mode, you do not declare a type on the distribution and you turn the lead over to us with the understanding that we will not sell to the people listed in the directive.
+The `<distribution>` element of the schema directs our sales. Normally when you are using the Price Presentation mode, you do not declare a type on the distribution and you turn the lead over to us with the understanding that we will not sell to the people listed in the directive.
 
-You have the option of either excluding an individual Agent by passing the first letter of her first name, the first three numbers of her last name, the last four digits of her phone number, and her license number through the +<agent_directive>+ tag, or a whole insurance company through the +<company_directive>+ tag. Any directive must fall into one of these two categories. If we do not have the company you are attempting to pass in our list, you MUST pass the agent directive instead.
+You have the option of either excluding an individual Agent by passing the first letter of her first name, the first three numbers of her last name, the last four digits of her phone number, and her license number through the `<agent_directive>` tag, or a whole insurance company through the `<company_directive>` tag. Any directive must fall into one of these two categories. If we do not have the company you are attempting to pass in our list, you MUST pass the agent directive instead.
