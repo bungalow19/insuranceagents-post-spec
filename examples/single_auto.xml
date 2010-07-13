@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<lead_auto xmlns="http://ping.insuranceagents.com/ping">
+  <distribution>
+    <company_directive>
+      <company_id>2</company_id
+    </company_directive>
+    <agent_directive>
+      <agent_fname>A</agent_fname>
+      <agent_lname>BAR</agent_lname>
+      <agent_license>SR3339494</agent_license>
+      <agent_phone>7151</agent_phone>
+    </agent_directive>
+  </distribution>
+  <addr>123 Fake Street</addr>
+  <city>Anytown</city>
+  <credit_history>Excellent</credit_history>
+  <dui>0</dui>
+  <email>foo@bar.com</email>
+  <fname>John</fname>
+  <how_long_ins>6 Months - 1 Year</how_long_ins>
+  <insured>1</insured>
+  <lname>Doe</lname>
+  <occupation>CPA / Auditor</occupation>
+  <phone>6148675309</phone>
+  <policy_expire>2010-10-08</policy_expire>
+  <state>OH</state>
+  <zip>43081</zip>
+  <coverage_type>Superior Coverage</coverage_type>
+  <liability_limits>$50,000 / $100,000 / $25,000</liability_limits>
+  <medical_payments>25000</medical_payments>
+  <own_home>1</own_home>
+  <car>
+    <annual_usage>7500 - 10000</annual_usage>
+    <car_coverage>Liability Only</car_coverage>
+    <coll_deductible>250</coll_deductible>
+    <comp_deductible>250</comp_deductible>
+    <commute>1-5</commute>
+    <garage>No Cover</garage>
+    <main_use>Pleasure</main_use>
+    <make>DELOREAN</make>
+    <model>DMC-12</model>
+    <model_year>1981</model_year>
+    <ownership>Owned</ownership>
+    <rental>0</rental>
+    <towing>0</towing>
+  </car>
+  <driver>
+    <dob>1974-01-20</dob>
+    <driver_fname>John</driver_fname>
+    <driver_lname>Doe</driver_lname>
+    <dui>0</dui>
+    <education>Bachelors Degree</education>
+    <gender>M</gender>
+    <gpa>3</gpa>
+    <license_age>17</license_age>
+    <license_state>OH</license_state>
+    <license_status>Active</license_status>
+    <marital_status>Single</marital_status>
+    <occupation>CPA / Auditor</occupation>
+    <parents>1</parents>
+    <relation>Primary</relation>
+    <sr22>0</sr22>
+    <suspension>0</suspension>
+    <violation>
+      <month>10</month>
+      <year>2009</year>
+      <type>Speeding</type>
+    </violation>
+  </driver>
+</lead_auto>

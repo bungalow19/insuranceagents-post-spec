@@ -355,7 +355,7 @@
           </annotation>
           <simpleType>
             <restriction base="string">
-              <pattern value="^[A-Za-z]{1}$"></pattern>
+              <pattern value="[A-Za-z]{1}"></pattern>
             </restriction>
           </simpleType>
         </element>
@@ -365,7 +365,7 @@
           </annotation>
           <simpleType>
             <restriction base="string">
-              <pattern value="^[A-Za-z]{3}$"></pattern>
+              <pattern value="[A-Za-z]{3}"></pattern>
             </restriction>
           </simpleType>
         </element>
@@ -375,7 +375,7 @@
           </annotation>
           <simpleType>
             <restriction base="string">
-              <pattern value="^[^ ]+$"></pattern>
+              <pattern value="[^ ]+"></pattern>
             </restriction>
           </simpleType>
         </element>
@@ -385,7 +385,7 @@
           </annotation>
           <simpleType>
             <restriction base="string">
-              <pattern value="^[0-9]{4}$"></pattern>
+              <pattern value="[0-9]{4}"></pattern>
             </restriction>
           </simpleType>
         </element>
@@ -669,7 +669,7 @@
                                 	<element name="towing"
                                 		type="boolean">
                                 	</element>
-                                	<element name="trim"
+                                	<element name="trim" minOccurs='0'
                                 		type="string">
                                 	</element>
                                 </all>
