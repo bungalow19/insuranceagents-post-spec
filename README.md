@@ -65,7 +65,7 @@ Use lower case, the parameters and values we receive via http post are case sens
 Leg Bidding
 -----------
 
-To use leg bidding, use the same procedure as before, but set the 'type' attribute on the `<distribution>` tag to 'leg\_bid'.
+To use leg bidding, use the same procedure as before, but pass an additional HTTP parameter: `leg_bid=1`, on both the PING and the POST.
   
 Instead of buying exclusive rights to the league, we will return with an XML response as follows:
 
@@ -73,19 +73,37 @@ Instead of buying exclusive rights to the league, we will return with an XML res
     <reply xmlns="http://ping.insuranceagents.com/ping">
       <code>1</code>
       <comments></comments>
-      <distribution>
-        <company_directive>
-          <company_id>4</company_id>
-          <price>5.00</price>
-        </company_directive>
-        <company_directive>
+      <legs>
+        <leg id="125560">
           <company_id>6</company_id>
           <price>6.00</price>
-        </company_directive>
-      </distribution>
+        </leg>
+        <leg id="125561">
+          <company_id>5</company_id>
+          <price>5.00</price>
+        </leg>
+        <leg id="125562">
+          <agent_fname>A</agent_fname>
+          <agent_lname>BAR</agent_lname>
+          <agent_phone>5309</agent_phone>
+          <agent_license>4430091</agent_license>
+          <price>2.00</price>
+        </leg>
+      </legs>
+      <price>13.00</price>
     </reply>
     
-This indicates that we will pay $5.00 for a leg sold to company id 4, and $6.00 for a leg sold to company id 6. If you wish to sell us the company 4 leg, but not the company 6 leg, simply add a distribution directive for company 6 on the post.
+This indicates that we will pay $5.00 for a leg sold to company id 4, $6.00 for a leg sold to company id 6, and $2.00 for a leg sold to an independent agent, identifiable by license number, beginning of her first and last name, and license number.
+
+You have the right to sell us whatever legs you wish through the `sell_to_legs` HTTP parameter. If this field is absent, we will buy every leg we bid on during the PING.
+
+If this field is present, it should be a comma-separated list of leg ids. In this example, if you wanted to sell us the leg for the independent agent, and company ID 6, you would send:
+
+    sell_to_legs=125560,125562&leg_bid=1
+    
+...in addition to the normal ping-posting parameters. We would buy and take action on only these two legs listed.
+
+You can examine our company ID list at any time at:
 
 API Keys
 --------
